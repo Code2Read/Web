@@ -1,3 +1,4 @@
+/*
 import {
     GraphQLObjectType,
     GraphQLString,
@@ -12,3 +13,4 @@ export default new GraphQLObjectType({
         price: { type: GraphQLInt }
     }
 });
+*/

@@ -1,9 +1,11 @@
 import {
     GraphQLList,
-    GraphQLID
+    GraphQLID,
+    GraphQLNonNull
 } from 'graphql';
-import {ClientType} from '../types';
+import ClientType from '../types/clientType';
 import {ClientModel} from '../../models';
+import getProjection from './get-projection';
 
 var client = {
     type: new GraphQLList(ClientType),
@@ -14,16 +16,16 @@ var client = {
         }
     },
     resolve(root, params, source, options) {
-        const projection = getProjection(options.fieldASTs[0]);
-        return ClientModel.find().select(projection).exec();
+        //const projection = getProjection(options.fieldASTs[0]);
+        return null;//ClientModel.find().select(projection).exec();
     }
 };
 
 var clients = {
     type: new GraphQLList(ClientType),
     resolve(root, params, source, options) {
-        const projection = getProjection(options.fieldASTs[0]);
-        return ClientModel.find().select(projection).exec();
+        //const projection = getProjection(options.fieldASTs[0]);
+        return null;//ClientModel.find().select(projection).exec();
     }
 };
 
