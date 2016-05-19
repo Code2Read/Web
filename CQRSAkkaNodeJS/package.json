@@ -1,11 +1,11 @@
 {
-  "name": "graphqlnodemongodb",
+  "name": "cqrsakkanodejs",
   "version": "0.0.0",
-  "description": "Introduction to GraphQL in nodeJS with MongoDb",
+  "description": "Introduction to CQRS in nodeJS with MongoDb and Akka",
   "license": "GPL",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Code2Read/Web/tree/master/NodeJsGrapQLMongoDB"
+    "url": "https://github.com/Code2Read/Web/tree/master/CQRSNodeJsAkka"
   },
   "scripts": {
     "start": "node index.js"

@@ -9,6 +9,8 @@ import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import mongoose from 'mongoose';
 
+http://localhost:8080/graphql?query={person(id:"573e194bb34897e0051f6623"){name,lastName}}
+
 import schema from './graphql';
 
 var app = express();
