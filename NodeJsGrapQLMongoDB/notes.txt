@@ -1,0 +1,31 @@
+npm install --save graphql
+npm install --save mongoose
+npm install --save express
+npm install --save express-graphql
+npm install --save babel-core
+npm install --save babel-preset-es2015
+
+import express from 'express';
+import graphqlHTTP from 'express-graphql';
+import mongoose from 'mongoose';
+
+import schema from './graphql';
+
+var app = express();
+
+// GraphqQL server route
+app.use('/graphql', graphqlHTTP(req => ({
+  schema,
+  pretty: true
+})));
+
+// Connect mongo database
+mongoose.connect('mongodb://localhost/graphql');
+
+// start server
+var server = app.listen(8080, () => {
+  console.log('Listening at port', server.address().port);
+});
+
+require('babel/register');
+require('./app');
