@@ -23,6 +23,17 @@ app.get('/clients', function(req, res) {
     });
 });
 
+import OrderModel from './src/models/order';
+app.get('/orders', function(req, res) {
+    OrderModel.find(function(err, orders) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(orders);
+        }
+    });
+});
+
 mongoose.connect('mongodb://localhost/cqrs-akka-nodejs');
 
 var server = app.listen(8081, () => {

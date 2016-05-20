@@ -19,10 +19,24 @@ export default new GraphQLObjectType({
         email: { type: GraphQLString },
         orders: {
             type: new GraphQLList(OrderType),
+            args: {
+                top: {
+                    name: 'top',
+                    type: GraphQLInt
+                },
+                priceGt:{
+                    name: 'priceGt',
+                    type: GraphQLInt
+                }
+            },
             resolve(root, params, source, options) {
                 const projection = getProjection(options.fieldASTs[0]);
                 return OrderModel
-                .find({ clientId: root._id })
+                .find({ 
+                    clientId: root._id, 
+                    total: { $gt: params.priceGt ? params.priceGt : 0 } 
+                })
+                .limit(params.top)
                 .select(projection).exec();
             }
         }

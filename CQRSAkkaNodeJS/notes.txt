@@ -1,0 +1,5 @@
+
+http://localhost:8081/graphql?query={clients{_id,name,email,orders(top:2, priceGt:10){clientId,total,date,items{code,quantity,price}}}}
+http://localhost:8081/clients
+http://localhost:8081/orders
+http://localhost:8081/api

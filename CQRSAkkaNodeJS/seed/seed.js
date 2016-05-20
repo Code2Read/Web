@@ -22,23 +22,30 @@ var clients = [
 var orders = [
     {
         clientId: 1,
-        total: 100,
+        total: 150,
+        date: new Date(),
         items: [
             {
                 code: 'CP-001',
                 quantity: 5,
-                price: 50
+                price: 80
             },
             {
                 code: 'CP-002',
                 quantity: 10,
-                price: 50
+                price: 35
+            },
+            {
+                code: 'CP-032',
+                quantity: 10,
+                price: 35
             }
         ]
     },
     {
         clientId: 1,
         total: 50,
+        date: new Date(),
         items: [
             {
                 code: 'CP-001',
@@ -55,6 +62,7 @@ var orders = [
     {
         clientId: 2,
         total: 80,
+        date: new Date(),
         items: [
             {
                 code: 'CP-001',
