@@ -12,7 +12,7 @@ namespace Akka.Core
             ReceiveAsync<Order>(x => SaveOrder(x));
         }
 
-        private async Task SaveOrder(Order order)
+        public async Task SaveOrder(Order order)
         {
             IMongoClient _client = new MongoClient("mongodb://localhost:27017/");
             IMongoDatabase _database = _client.GetDatabase("cqrs-akka-nodejs");
