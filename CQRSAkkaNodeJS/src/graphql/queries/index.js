@@ -1,3 +1,4 @@
-import { clients, client } from './clientQuery';
+import client from './clientSingleQuery';
+import clients from './clientMultipleQuery';
 
-export default { clients, client };
+export default {client, clients};

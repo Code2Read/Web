@@ -1,4 +1,4 @@
-/*import {
+import {
     GraphQLObjectType,
     GraphQLInt,
     GraphQLNonNull,
@@ -18,4 +18,3 @@ export default new GraphQLObjectType({
         items:{ type: new GraphQLList(ItemType)}
     }
 });
-*/
