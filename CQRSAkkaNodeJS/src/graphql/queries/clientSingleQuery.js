@@ -1,7 +1,7 @@
 import {
     GraphQLList,
-    GraphQLID,
-    GraphQLNonNull
+    GraphQLNonNull,
+    GraphQLInt
 } from 'graphql';
 import ClientType from '../types/clientType';
 import ClientModel from '../../models/client';
@@ -12,11 +12,11 @@ export default  {
     args: {
         id: {
             name: 'id',
-            type: new GraphQLNonNull(GraphQLID)
+            type: new GraphQLNonNull(GraphQLInt)
         }
     },
     resolve(root, params, source, options) {
         const projection = getProjection(options.fieldASTs[0]);
-        return ClientModel.findById(params.id).select(projection).exec();
+        return ClientModel.find({_id:params.id}).select(projection).exec();
     }
 };
