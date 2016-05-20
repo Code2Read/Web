@@ -2,11 +2,11 @@ import {
     GraphQLObjectType,
     GraphQLInt,
     GraphQLNonNull,
-    GraphQLDate,
     GraphQLID,
     GraphQLList
 } from 'graphql';
 import ItemType from './itemType';
+import GraphQLDate from 'graphql-date';
 
 export default new GraphQLObjectType({
     name: 'Order',

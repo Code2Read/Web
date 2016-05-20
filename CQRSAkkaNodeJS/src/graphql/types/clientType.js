@@ -5,6 +5,7 @@ import {
     GraphQLNonNull,
     GraphQLList
 } from 'graphql';
+import OrderType from './orderType';
 
 export default new GraphQLObjectType({
     name: 'Client',
@@ -12,6 +13,7 @@ export default new GraphQLObjectType({
         _id: { type: new GraphQLNonNull(GraphQLID) },
         name: { type: GraphQLString },
         address: { type: GraphQLString },
-        email: { type: GraphQLString }
+        email: { type: GraphQLString },
+        orders: { type: new GraphQLList(OrderType) }
     }
 });
