@@ -12,6 +12,17 @@ app.get('/api', function (req, res) {
     res.send({ version: 1 });
 });
 
+import ClientModel from './src/models/client';
+app.get('/clients', function(req, res) {
+    ClientModel.find(function(err, clients) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(clients);
+        }
+    });
+});
+
 mongoose.connect('mongodb://localhost/cqrs-akka-nodejs');
 
 var server = app.listen(8081, () => {

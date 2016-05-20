@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 var orderSchema = new mongoose.Schema({
-    clientId: mongoose.Schema.Types.ObjectId,
+    clientId: Number,
     total: Number,
     date: { type: Date, default: Date.Now },
     items: [{
@@ -11,4 +11,4 @@ var orderSchema = new mongoose.Schema({
     }]
 });
 
-export default mongoose.model('order', orderSchema);
+export default mongoose.model('orders', orderSchema);

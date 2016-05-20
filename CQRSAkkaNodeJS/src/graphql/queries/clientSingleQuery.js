@@ -17,6 +17,6 @@ export default  {
     },
     resolve(root, params, source, options) {
         const projection = getProjection(options.fieldASTs[0]);
-        return nullClientModel.findById(params.id).select(projection).exec();
+        return ClientModel.findById(params.id).select(projection).exec();
     }
 };
